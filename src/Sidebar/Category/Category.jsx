@@ -1,16 +1,25 @@
+import { useId } from "react";
 import Input from "../../components/Input";
 import "./Category.css";
 
-const Category = () => {
+const Category = ({ handleChange }) => {
   const category = ["All", "Sneakers", "Flats", "Sandals", "Heels"];
+  const uId = useId();
 
   return (
     <div className="category-container">
       <h2 className="sidebar-title">Category</h2>
 
       <div>
-        {category.map((name) => (
-          <Input group="category" name={name} />
+        {category.map((name, index) => (
+          <Input
+            key={`${uId}-${index}`}
+            handleChange={handleChange}
+            value={name}
+            group="category"
+            name={name}
+            color="black"
+          />
         ))}
       </div>
     </div>

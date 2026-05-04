@@ -7,14 +7,22 @@ const Card = ({ img, title, star, reviews, prevPrice, newPrice }) => {
       <figcaption className="card-details">
         <h3 className="card-title">{title}</h3>
         <section className="card-reviews">
-          <div className="stars">{star}</div>
+          <div className="stars">
+            {star}
+            {star}
+            {star}
+            {star}
+            {star} 5 Stars
+          </div>
           <span className="total-reviews">{reviews}</span>
         </section>
         <section className="card-price">
           <div className="price">
-            <del>{prevPrice}</del> {newPrice}
+            <del>{prevPrice}</del>
+            <br />
+            <span>${newPrice}</span>
           </div>
-          <div className="bag">
+          <div className="bag-icon">
             <BsBagHeartFill />
           </div>
         </section>

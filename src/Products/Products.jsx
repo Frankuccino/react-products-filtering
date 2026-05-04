@@ -1,48 +1,38 @@
-import { AiFillStar } from "react-icons/ai";
 import "./Products.css";
-import { BsBagHeartFill } from "react-icons/bs";
 import Card from "../components/Card";
+// import { AiFillStar } from "react-icons/ai";
+import data from "../db/data.jsx";
 
 const Products = () => {
+  // const exampleData = {
+  //   img: "https://m.media-amazon.com/images/I/6125yAfsJKL._AC_UX575_.jpg",
+  //   title: "Nike Air Monarch IV",
+  //   star: <AiFillStar className="rating-star" />,
+  //   reviews: "(123 reviews)",
+  //   prevPrice: "$140,00",
+  //   newPrice: "200",
+  //   company: "Nike",
+  //   color: "white",
+  //   category: "sneakers",
+  // };
+
+  // const { img, title, star, reviews, prevPrice, newPrice } = exampleData;
+
+  // TODO: Add the color and category properties for filtering later.
+
   return (
     <>
       <section className="card-container">
-        <figure className="card">
-          <img
-            src="https://m.media-amazon.com/images/I/6125yAfsJKL._AC_UX575_.jpg"
-            alt="Shoe"
-            className="card-img"
+        {data.map(({ img, title, star, reviews, prevPrice, newPrice }) => (
+          <Card
+            img={img}
+            title={title}
+            star={star}
+            reviews={reviews}
+            prevPrice={prevPrice}
+            newPrice={newPrice}
           />
-          <figcaption className="card-details">
-            <h3 className="card-title">Shoe</h3>
-            <section className="card-reviews">
-              <div className="stars">
-                <AiFillStar className="ratings-start" />
-                <AiFillStar className="ratings-start" />
-                <AiFillStar className="ratings-start" />
-                <AiFillStar className="ratings-start" />
-                <AiFillStar className="ratings-start" />
-              </div>
-              <span className="total-reviews">4 Stars</span>
-            </section>
-            <section className="card-price">
-              <div className="price">
-                <del>#300</del> 200
-              </div>
-              <div className="bag">
-                <BsBagHeartFill />
-              </div>
-            </section>
-          </figcaption>
-        </figure>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        ))}
       </section>
     </>
   );

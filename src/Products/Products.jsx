@@ -16,12 +16,14 @@ const Products = () => {
           <figcaption className="card-details">
             <h3 className="card-title">Shoe</h3>
             <section className="card-reviews">
-              <AiFillStar className="ratings-start" />
-              <AiFillStar className="ratings-start" />
-              <AiFillStar className="ratings-start" />
-              <AiFillStar className="ratings-start" />
-              <AiFillStar className="ratings-start" />
-              <span className="total-reviews">4</span>
+              <div className="stars">
+                <AiFillStar className="ratings-start" />
+                <AiFillStar className="ratings-start" />
+                <AiFillStar className="ratings-start" />
+                <AiFillStar className="ratings-start" />
+                <AiFillStar className="ratings-start" />
+              </div>
+              <span className="total-reviews">4 Stars</span>
             </section>
             <section className="card-price">
               <div className="price">

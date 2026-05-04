@@ -1,32 +1,15 @@
+import Input from "../../components/Input";
 import "./Colors.css";
 
 const Colors = () => {
+  const colors = ["All", "Black", "Blue", "Red", "Green", "White"];
+
   return (
     <div>
-      <label className="sidebar-label-container color-title">
-        <input type="radio" name="test3" />
-        <span className="checkmark"></span> All
-      </label>
-      <label className="sidebar-label-container">
-        <input type="radio" name="test3" />
-        <span className="checkmark"></span>Black
-      </label>
-      <label className="sidebar-label-container">
-        <input type="radio" name="test3" />
-        <span className="checkmark"></span>Blue
-      </label>
-      <label className="sidebar-label-container">
-        <input type="radio" name="test3" />
-        <span className="checkmark"></span>Red
-      </label>
-      <label className="sidebar-label-container">
-        <input type="radio" name="test3" />
-        <span className="checkmark"></span>Green
-      </label>
-      <label className="sidebar-label-container">
-        <input type="radio" name="test3" />
-        <span className="checkmark"></span>White
-      </label>
+      <h2 className="color-title">Colors</h2>
+      {colors.map((color) => (
+        <Input group="colors" name={color} />
+      ))}
     </div>
   );
 };

@@ -3,7 +3,7 @@ import Input from "../../components/Input";
 import "./Colors.css";
 
 const Colors = ({ handleChange }) => {
-  const colors = ["All", "Black", "Blue", "Red", "Green", "White"];
+  const colors = ["all", "black", "blue", "red", "green", "white"];
   const uId = useId();
 
   return (
@@ -13,7 +13,7 @@ const Colors = ({ handleChange }) => {
         <Input
           key={`${uId}-${index}`}
           handleChange={handleChange}
-          value={name}
+          value={color}
           group="colors"
           name={color}
         />

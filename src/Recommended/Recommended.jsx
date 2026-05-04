@@ -1,16 +1,17 @@
+import Button from "../components/Button";
 import "./Recommended.css";
 
-const Recommended = () => {
+const Recommended = ({ handleClick }) => {
+  const buttons = ["All", "Nike", "Adiddas", "Puma", "Vans"];
+
   return (
     <>
       <div>
         <h2 className="recommended-title">Recommended</h2>
         <div className="recommended-flex">
-          <button className="btns">All Products</button>
-          <button className="btns">Nike</button>
-          <button className="btns">Adiddas</button>
-          <button className="btns">Puma</button>
-          <button className="btns">Vans</button>
+          {buttons.map((name) => (
+            <Button onClickHandler={handleClick} title={name} value={name} />
+          ))}
         </div>
       </div>
     </>

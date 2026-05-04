@@ -23,17 +23,15 @@ const App = () => {
 
   // Search Input Filter
   const filteredItems = products.filter((product) =>
-    product.title.toLowerCase().indexOf(query.toLowerCase() !== -1),
+    product.title.toLowerCase().includes(query.toLowerCase()),
   );
 
   // Radio Filters
   const handleChange = (event) => setSelectedCategory(event.target.value);
-
-  // Buttons Filter
   const handleClick = (event) => setSelectedCategory(event.target.value);
 
   // ------ Main function --------> Card Component
-  function filteredData(products, selectedSource, query) {
+  function filteredData(products, selected, query) {
     // Copying the source value here, so no direct mutation of the source.
     let filteredProducts = products;
 
@@ -43,16 +41,17 @@ const App = () => {
     }
 
     // Filtering Selected Radio Input
-    if (selectedSource) {
-      filteredProducts = filteredProducts.filter(
-        ({ category, color, company, newPrice, title }) => {
-          category === selectedSource ||
-            color === selectedSource ||
-            company === selectedSource ||
-            newPrice === selectedSource ||
-            title === selectedSource;
-        },
-      );
+    if (selected) {
+      if (selected !== "all") {
+        filteredProducts = filteredProducts.filter(
+          ({ category, color, company, newPrice, title }) =>
+            category === selected ||
+            color === selected ||
+            company === selected ||
+            newPrice === selected ||
+            title === selected,
+        );
+      }
     }
     return filteredProducts.map(
       ({ img, title, star, reviews, prevPrice, newPrice }, index) => (

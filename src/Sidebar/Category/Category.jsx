@@ -3,7 +3,7 @@ import Input from "../../components/Input";
 import "./Category.css";
 
 const Category = ({ handleChange }) => {
-  const category = ["All", "Sneakers", "Flats", "Sandals", "Heels"];
+  const category = ["all", "sneakers", "flats", "sandals", "heels"];
   const uId = useId();
 
   return (
